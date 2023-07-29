@@ -1,0 +1,24 @@
+{
+    "name": "educrat_new-main",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "client": "cd client && npm start",
+        "backend": "cd backend && npm start",
+        "socket": "cd socket && npm start",
+        "install-dependency": "cd client && npm install && cd ../backend && npm install && cd ../socket && npm install",
+        "start": "cd backend && npm install && npm start & cd socket && npm install && npm start & cd client && npm install && npm start",
+        "dev": "concurrently \"npm run backend\" \"npm run socket\" \"npm run client\"",
+        
+        "start-new": "concurrently \"npm run install-and-start-backend\" \"npm run install-and-start-socket\" \"npm run install-and-start-client\"",
+        "install-and-start-client": "cd client && npm install && npm start",
+        "install-and-start-backend": "cd backend && npm install && npm start",
+        "install-and-start-socket": "cd socket && npm install && npm start"
+    },
+    "dependencies": {
+        "concurrently": "^8.2.0"
+    },
+    "author": "",
+    "license": "ISC"
+}
